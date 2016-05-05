@@ -1,0 +1,15 @@
+delimiter $$
+
+CREATE TABLE `posts` (
+  `post_id` int(8) NOT NULL AUTO_INCREMENT,
+  `post_content` longtext NOT NULL,
+  `post_date` datetime NOT NULL,
+  `post_topic` int(8) NOT NULL,
+  `post_by` int(8) NOT NULL,
+  PRIMARY KEY (`post_id`),
+  KEY `post_topic` (`post_topic`),
+  KEY `post_by` (`post_by`),
+  CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`post_topic`) REFERENCES `topics` (`topic_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `posts_ibfk_2` FOREIGN KEY (`post_by`) REFERENCES `users` (`user_id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=214 DEFAULT CHARSET=latin1$$
+

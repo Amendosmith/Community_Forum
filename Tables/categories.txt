@@ -1,0 +1,19 @@
+delimiter $$
+
+
+CREATE TABLE `categories` (
+
+  `cat_id` int(8) NOT NULL AUTO_INCREMENT,
+  
+`cat_name` varchar(255) NOT NULL,
+  
+`cat_description` varchar(255) NOT NULL,
+  
+`catid` int(8) NOT NULL,
+  
+PRIMARY KEY (`cat_id`),
+  
+KEY `ibfk3catname` (`cat_name`)
+
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1$$
+

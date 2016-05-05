@@ -1,0 +1,15 @@
+delimiter $$
+
+CREATE TABLE `messages` (
+  `m_id` int(8) NOT NULL AUTO_INCREMENT,
+  `m_content` longtext NOT NULL,
+  `m_date` datetime NOT NULL,
+  `m_topic` int(8) NOT NULL,
+  `m_by` int(8) NOT NULL,
+  PRIMARY KEY (`m_id`),
+  KEY `m_topic` (`m_topic`),
+  KEY `m_by` (`m_by`),
+  CONSTRAINT `messages_ibfk_1` FOREIGN KEY (`m_topic`) REFERENCES `pm` (`message_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `messages_ibfk_2` FOREIGN KEY (`m_by`) REFERENCES `users` (`user_id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=231 DEFAULT CHARSET=latin1$$
+

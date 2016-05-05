@@ -1,0 +1,15 @@
+delimiter $$
+
+CREATE TABLE `pm` (
+  `message_id` int(8) NOT NULL AUTO_INCREMENT,
+  `message_subject` varchar(255) NOT NULL,
+  `message_date` datetime NOT NULL,
+  `message_by` int(8) NOT NULL,
+  `message_to` varchar(45) NOT NULL,
+  `is_closed` int(11) NOT NULL DEFAULT '0',
+  `reported_by` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`message_id`),
+  KEY `message_by` (`message_by`),
+  CONSTRAINT `message_ibfk_2` FOREIGN KEY (`message_by`) REFERENCES `users` (`user_id`) ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=latin1$$
+

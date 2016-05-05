@@ -1,0 +1,24 @@
+delimiter $$
+
+CREATE TABLE `users` (
+  `user_id` int(8) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(30) NOT NULL,
+  `user_pass` varchar(255) NOT NULL,
+  `user_email` varchar(255) NOT NULL,
+  `user_date` varchar(10) NOT NULL,
+  `user_level` int(8) NOT NULL,
+  `is_reported` varchar(45) NOT NULL DEFAULT 'No',
+  `reported_by` varchar(45) DEFAULT NULL,
+  `reac_level` int(8) NOT NULL DEFAULT '0',
+  `real_name` varchar(30) DEFAULT NULL,
+  `birthday` varchar(10) DEFAULT NULL,
+  `gender` varchar(6) DEFAULT NULL,
+  `city` varchar(30) DEFAULT NULL,
+  `country` varchar(30) DEFAULT NULL,
+  `interests` varchar(100) DEFAULT NULL,
+  `you` varchar(100) DEFAULT NULL,
+  `quotes` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `user_name_unique` (`user_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1$$
+
